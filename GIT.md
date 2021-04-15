@@ -55,14 +55,43 @@
 * #### 分支管理
 
   * git checkout -b dev：创建并切换到dev分支
+
   * git branch：查看当前分支
+
   * git switch master：切回master
+
   * git merge dev：将dev分支合并到master上
+
   * git branch -d dev：删除dev分支
+
   * git stash：存储当前工作区
+
   * git stash list：查看存储的工作区
+
   * git stash pop：恢复工作区并删除stash
+
   * git branch -D 分支名：强行删除未被合并的分支
+
+  * 当前分支的最新提交落后于远程分支
+
+    ```
+    git fetch origin
+    git merge origin/master
+    ```
+
+    若再次push出现：拒绝合并无关的历史
+
+    - 先将远程仓库和本地仓库关联起来
+
+      ```bash
+      git branch --set-upstream-to=origin/master master
+      ```
+
+    - 然后再次pull
+
+      ```undefined
+      git pull --allow-unrelated-histories    (忽略版本不同造成的影响)
+      ```
 
 * #### 多人协作
 
